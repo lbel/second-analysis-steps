@@ -33,6 +33,7 @@ In principle, there are multiple ways of interacting with the LHCb software repo
 
 Here, we want to focus on the second workflow.
 
+## Initial setup
 Before jumping in by creating a project in Gitlab, you should make sure that
 your local git configuration and your settings on Gitlab are sufficiently set up:
 
@@ -55,8 +56,9 @@ git config --global lb-use.protocol ssh
 ```
 This makes sure the LHCb commands use the ssh protocol instead of https.
 
-In the Gitlab web interface, create a new project by clicking on the "New project" button.
-Give your project the name "LHCbSK".
+## Creating a mock project
+In the [Gitlab web interface](https://gitlab.cern.ch/projects/new), create a new project by clicking on the "New project" button.
+Give your project the name `LHCbSK`.
 
 We will now set up a local LHCb development area that is connected to the git
 repository you just created.
@@ -64,7 +66,7 @@ In order to create a new dev environment, run
 ```
 $ lb-dev --list LHCb
 ```
-to see which versions of the LHCb project are available.
+(or the shorthand `lb-dev -l LHCb`) to see which versions of the LHCb project are available.
 Pick the newest one and run
 ```
 $ lb-dev --name LHCbSK LHCb/<version>
